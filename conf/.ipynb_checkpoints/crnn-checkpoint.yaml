@@ -1,0 +1,7 @@
+builder: crnn
+options:
+  input_shape: [null, null, 3]
+  backbone: mobilev3_large_mini
+  kernel_init: he_normal
+  feature_layer: expanded_conv_11/Add
+  n_class: 7550

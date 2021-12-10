@@ -1,0 +1,33 @@
+model: crnn
+
+datasets:
+  train: ds_train
+  val: ds_val
+
+optimizer:
+  name: AdamW
+  lookahead: false
+  mixed_precision: true
+  options:
+    weight_decay: 0.0001
+    learning_rate: 0.001
+
+callbacks:
+  ModelCheckpoint:
+    filepath: crnn
+    monitor: val_edit_distance
+    save_weights_only: true
+    save_best_only: true
+  EarlyStopping:
+    patience: 5
+    min_delta: 0.0001
+    verbose: 1
+  ReduceLROnPlateau:
+    monitor: val_edit_distance
+    factor: 0.5
+    patience: 2
+    min_lr: 0.0000001
+    verbose: 1
+
+fit:
+  epochs: 1 

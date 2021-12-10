@@ -1,0 +1,5 @@
+*.jpg
+*.png
+ckpt
+__pycache__
+*.zip

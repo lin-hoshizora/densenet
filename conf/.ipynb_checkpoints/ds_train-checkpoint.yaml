@@ -1,0 +1,16 @@
+buf_size: 500
+batch_size: 512 
+test_ratio: 0.1
+pickle: 
+  - /datasets/almex_insurance/combined13_gt.pkl 
+  - /datasets/img/synth_gt.pkl
+parse_params:
+  aug_tags:
+    combined:
+      - combined_blur7
+      - combined_blur5
+      - combined_elastic
+      - combined_b53d2
+  combined_crop: 0.15
+  synth_crop: 0.1
+  delta: 0.15

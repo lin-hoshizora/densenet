@@ -1,0 +1,7 @@
+name: MobileNetV3Large
+
+options:
+  include_top: false
+  weights: null
+  alpha: 1.0
+  minimalistic: true
